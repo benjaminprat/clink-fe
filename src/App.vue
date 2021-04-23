@@ -1,9 +1,9 @@
 <template>
-  <div><span><h1></h1></span></div>
+  <span><h1>Welcome to the hit parade</h1></span>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style></style>
+ <style></style>
