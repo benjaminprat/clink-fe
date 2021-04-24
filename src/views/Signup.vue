@@ -22,6 +22,11 @@
           <label>Password:</label>
           <input type="password" class="form-control" v-model="password" />
         </div>
+        <div class="form-group">
+          <label>Confirm Password:</label>
+          <input type="password" class="form-control" v-model="password_validation" />
+          <small v-if="password_validation !== password">Passwords must match</small>
+        </div>
         <input type="submit" class="btn btn-primary" value="Sign Up" />
       </form>
     </div>
@@ -41,6 +46,7 @@ export default {
       first_name: "",
       email: "",
       password: "",
+      password_validation: "",
       errors: [],
     };
   },
@@ -51,6 +57,7 @@ export default {
         first_name: this.first_name,
         email: this.email,
         password: this.password,
+        password_validation: this.password_validation,
       };
       axios
         .post("/api/users", params)
