@@ -56,6 +56,7 @@ export default {
         .post("/api/users", params)
         .then((response) => {
           console.log(response.data);
+          this.$router.push("login");
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
