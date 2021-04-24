@@ -1,15 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/signup">Signup</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/wines">Show All Wines</router-link> |
-      <router-link to="/wines/new">Add A New Wine</router-link> |
-      <router-link to="/card"> New Card</router-link> |
-      <router-link to="/logout">Logout</router-link> |
-    </div>
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="/" class="navbar-brand">Clink! Clink!</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="/about" class="nav-item nav-link">About</a>
+                <a href="/wines" class="nav-item nav-link">Show All Wines</a>
+                <a href="/wines/new" class="nav-item nav-link">Add A New Wine</a>
+                <a href="/card" class="nav-item nav-link">New Entry</a>
+                <a href="/signup" class="nav-item nav-link">Signup</a>
+                <a href="/login" class="nav-item nav-link">Login</a>
+                <a href="/logout" class="nav-item nav-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+</div>
     <router-view />
   </div>
 </template>
