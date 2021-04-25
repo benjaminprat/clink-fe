@@ -1,19 +1,26 @@
 <template>
   <div class="home">
-    <img alt='Clink Clink Logo' src='../assets/clink-logo.png'>
-    <HelloWorld msg="Clink!Clink!"/>
+    <NavBar/>
+    <img class="logo" alt='Clink Clink Logo' src='../assets/clink-logo.png'>
   </div>
 </template>
-
+<style scoped>
+.logo{
+height:400px;
+/* display: flex; */
+flex-direction: row;
+}
+</style>
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import NavBar from '@/components/NavBar.vue'
 
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+   NavBar
   }
 }
+
 </script>
