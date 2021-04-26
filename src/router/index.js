@@ -7,15 +7,23 @@ import Logout from "../views/Logout.vue";
 import Login from "../views/Login.vue";
 import Card from "../views/Card.vue";
 import Signup from "../views/Signup.vue";
+import Form from "../views/Form.vue"
 
 Vue.use(VueRouter);
 
 const routes = [
   {
+    path: "/form",
+    name: "Form",
+    component: Form,
+  },
+  
+  {
     path: "/",
     name: "Home",
     component: Home,
   },
+
   {
     path: "/wines/new",
     name: "WinesCreate",
