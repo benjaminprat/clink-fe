@@ -10,10 +10,8 @@
 #app {
   font-family: 'Roboto', sans-serif;
   height: 100vh;
-  text-align: center;
   background: #11101A;
-  /* color: #2c3e50; */
-  color:#fffffe;
+  color: #2c3e50;
 }
 
 
