@@ -1,19 +1,29 @@
 <template>
   <div class="wines-index">
+  <NavBarTwo/>
     <h1>{{ message }}</h1>
     <h1>
       <div v-for="wine in wines" v-bind:key="wine.id">
-        {{ wine.producer_wine }}
+        <p class="wines">{{ wine.producer_wine }}</p>
       </div>
     </h1>
   </div>
 </template>
 
-<style></style>
+<style>
+.wines-index {
+  height: 100%;
+}
+</style>
 
 <script>
+import NavBarTwo from '@/views/NavBarTwo.vue'
 import axios from "axios";
 export default {
+   name: 'WinesIndex',
+  components: {
+   NavBarTwo
+  },
   data: function () {
     return {
       message: "Here are all your wines",

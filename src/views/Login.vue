@@ -1,5 +1,7 @@
 <template>
   <div class="login">
+    <a href="/" id="solo-logo">Clink! Clink!</a>
+
     <form v-on:submit.prevent="submit()">
       <h1>Login</h1>
       <ul>
@@ -15,7 +17,7 @@
         <label>Password:</label>
         <input type="password" class="form-control" v-model="password" />
       </div>
-      <input type="submit" class="btn btn-primary" value="Log In" />
+      <input type="submit"  value="Log In" />
     </form>
   </div>
 </template>

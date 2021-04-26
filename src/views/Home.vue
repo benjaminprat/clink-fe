@@ -13,7 +13,7 @@ flex-direction: row;
 </style>
 <script>
 // @ is an alias to /src
-import NavBar from '@/components/NavBar.vue'
+import NavBar from '@/views/NavBar.vue'
 
 
 export default {

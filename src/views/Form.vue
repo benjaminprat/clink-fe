@@ -1,7 +1,8 @@
- <template>
- <div class="form">
+<template>
+ <div class="form-style-3">
       <form v-on:submit.prevent="submit()">
-        🍷
+        <fieldset><legend>My Wine</legend>
+       <div class="style">🍷
         <select
           required
           name="style"
@@ -19,8 +20,9 @@
           <option value="full-red">Full-Bodied Red Wine</option>
           <option value="dessert">Dessert</option>
         </select>
+        </div> 
+        <div class="wine-stats">
         <p>
-          ✏️
           <input
             type="text"
             v-model="producer_wine"
@@ -28,22 +30,26 @@
           />
         </p>
         <p>
-          <!-- <label>grape: </label> -->
           🍇
           <input type="text" v-model="grape" placeholder="Grape" />
         </p>
-
         <p>
-          <!-- <label>Vintage: </label> -->
           📆
           <input type="text" v-model="vintage" placeholder="Vintage" />
         </p>
         <p>
-          <!-- <label>region: </label> -->
           📍
           <input type="text" v-model="region" placeholder="Region" />
         </p>
-        <!-- ⭐️
+        <p>
+          🌍
+          <input type="text" v-model="country" placeholder="Country" />
+        </p>
+        </div>
+          <fieldset><legend>Profile</legend>
+          </fieldset>
+        <div class="user-stats">
+      <!-- ⭐️
         <button class="star">★✭★</button> -->
         <!-- <label for="opinion">Overall Opinion: </label>
         
@@ -54,28 +60,35 @@
           <option value="🍷🍷🍷🍷">🍷🍷🍷🍷</option>
           <option value="🍷🍷🍷🍷🍷">🍷🍷🍷🍷🍷</option>
         </select> -->
+        <div class="look">
         <p>
-          <!-- <label>region: </label> -->
-          🌍
-          <input type="text" v-model="country" placeholder="Country" />
+          <!-- 👁
+          <input type="radio" placeholder="Look" v-model="look" /> -->
+          <input type="radio" id="pale-garnet" value="PaleGarnet" v-model="look">
+          <label for="pale-garnet">Pale Garnet</label>
+          <img src="../assets/pale-garnet.jpg" alt="">
+          <br>
+          <input type="radio" id="medium-red" value="MediumRed" v-model="look">
+          <label for="medium-red">Medium Red</label>
+          <img src="../assets/medium-red.jpg" alt="">
+           <br>
+            <input type="radio" id="deep-purple" value="DeepPurple" v-model="look">
+          <label for="deep-purple">Deep Purple</label>
+          <img src="../assets/deep-purple.jpg" alt="">
         </p>
+         </div>
         <p>
-          <!-- <label>Look: </label> -->
-          👁
-          <input type="text" placeholder="Look" v-model="look" />
-        </p>
-        <p>
-          <!-- <label>Smell: </label> -->
+        
           👃🏽
           <input type="text" placeholder="Smell" v-model="smell" />
         </p>
         <p>
-          <!-- <label>Taste: </label> -->
+        
           👅
           <input type="text" placeholder="Taste" ref="" v-model="taste" />
         </p>
         <p>
-          <!-- <label>Date Tasted: </label> -->
+  
           📆
           <input
             type="date"
@@ -86,19 +99,23 @@
           />
         </p>
         <p>
-          <!-- <label>Purchase Point: </label> -->
           🛒
           <input type="text" placeholder="Source" v-model="purchase_point" />
         </p>
+        </div>
         <input type="submit" class="button" value="Add New Wine" />
+      </fieldset>
       </form>
     </div>
     </template>
 
+<style></style>
+
 <script>
 import axios from "axios";
 import './Form.css';
-  export default {
+export default {
+    name: "Form",
    data: function () {
     return {
       message: "Add A New Wine",
@@ -125,10 +142,10 @@ import './Form.css';
       var wineParams = {
         style: this.style,
         producer_wine: this.producer_wine,
+        vintage: this.vintage,
         grape: this.grape,
         region: this.region,
         country: this.country,
-        vintage: this.vintage,
       };
       var entryParams = {
         wine_id: "",
@@ -153,9 +170,9 @@ import './Form.css';
           .catch((error) => {
             this.errors = error.response.data.errors;
           });
-      });
-    },
+        });
+      },
+    }
   }
-  }
+
 </script>
-   
