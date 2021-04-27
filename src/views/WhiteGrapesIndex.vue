@@ -3,8 +3,8 @@
   <NavBarTwo/>
     <h1>{{ message }}</h1>
       <div v-for="grape in whiteGrapes" v-bind:key="grape.id">
-        <h2>{{ grape.name }}</h2>
-        <p> Pronunciation: {{grape.pronunciation}}</p>
+        <h3>{{ grape.name }}</h3>
+        <p> Pronunciation: '{{grape.pronunciation}}'</p>
         <p> Origin: {{grape.origin}}</p>
         <p> Fruit: {{grape.fruit}}</p>
         <p> Body: {{grape.body}}</p>
@@ -19,9 +19,9 @@
   height: 100vh;
   width: 100%;
 }
-h2{
+h3{
   color: #FFFFFE;
-  font-size: 2.5rem;
+  font-size: 2.0rem;
 }
 p {
   font-size: 1.25rem;
