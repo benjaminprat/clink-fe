@@ -4,7 +4,7 @@
     <h1>{{ message }}</h1>
       <div v-for="grape in whiteGrapes" v-bind:key="grape.id">
         <h3>{{ grape.name }}</h3>
-        <p> Pronunciation: {{grape.pronunciation}}'</p>
+        <p> Pronunciation: '{{grape.pronunciation}}'</p>
         <p> Origin: {{grape.origin}}</p>
         <p> Fruit: {{grape.fruit}}</p>
         <p> Body: {{grape.body}}</p>
