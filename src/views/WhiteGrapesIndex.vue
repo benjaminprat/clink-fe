@@ -2,17 +2,30 @@
   <div class="white-grapes-all">
   <NavBarTwo/>
     <h1>{{ message }}</h1>
-    <h1>
       <div v-for="grape in whiteGrapes" v-bind:key="grape.id">
-        <h1>{{ grape.name }}</h1>
+        <h2>{{ grape.name }}</h2>
+        <p> Pronunciation: {{grape.pronunciation}}</p>
+        <p> Origin: {{grape.origin}}</p>
+        <p> Fruit: {{grape.fruit}}</p>
+        <p> Body: {{grape.body}}</p>
+        <p> Acidity: {{grape.acidity}}</p>
+        <p> Alcohol: {{grape.alcohol}}</p>
+        <p> Dominant Flavors: {{grape.dominant_flavors}}</p>
       </div>
-    </h1>
   </div>
 </template>
-// missing from chard to rose I think it's bc of the page height all logging to console
 <style>
 .white-grapes-all {
-  height: 100%;
+  height: 100vh;
+  width: 100%;
+}
+h2{
+  color: #FFFFFE;
+  font-size: 2.5rem;
+}
+p {
+  font-size: 1.25rem;
+  color: #FFFFFE;
 }
 </style>
 
