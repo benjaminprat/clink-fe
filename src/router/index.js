@@ -8,10 +8,18 @@ import Login from "../views/Login.vue";
 import Card from "../views/Card.vue";
 import Signup from "../views/Signup.vue";
 import Form from "../views/Form.vue"
+import WhiteGrapesIndex from "../views/WhiteGrapesIndex.vue"
+
 
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path: "/grapes",
+    name: "WhiteGrapesIndex",
+    component: WhiteGrapesIndex,
+  },
+  
   {
     path: "/form",
     name: "Form",
