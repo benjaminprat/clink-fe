@@ -1,5 +1,6 @@
 <template>
   <div class="white-grape-card">
+    <NavBarTwo/>
     <div class="grape-content" >
       <h3>{{ grape.name }}</h3>
         <p> Pronunciation:{{grape.pronunciation}}</p>
@@ -14,15 +15,20 @@
 </template>
 <style >
 .grape-content {
-  background-color: grey;
+  /* background-color: grey; */
 }
 p {
   color: #FFFFFE;
 }
 </style>
 <script>
+import NavBarTwo from '@/views/NavBarTwo.vue'
 import axios from 'axios'
 export default {
+  name: 'WineGrapeCard',
+  components: {
+    NavBarTwo
+  },
   data: function () {
     return {
       message: "Welcome to the Vue.js! test page",
@@ -34,7 +40,7 @@ export default {
       axios.get("/api/grapes/" + this.$route.params.id).then(response => {
         console.log(response.data);
         this.grape = response.data;
-        
+
 
       })
   },
