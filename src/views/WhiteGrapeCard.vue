@@ -25,7 +25,7 @@ p {
 import NavBarTwo from '@/views/NavBarTwo.vue'
 import axios from 'axios'
 export default {
-  name: 'WineGrapeCard',
+  name: 'WhiteGrapeCard',
   components: {
     NavBarTwo
   },

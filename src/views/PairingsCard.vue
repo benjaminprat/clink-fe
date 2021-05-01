@@ -4,10 +4,12 @@
        <div class="col-sm-6 col-lg-4">
           <div class="card">
             <div class="content card-body">
-    <h2 class="card-title"> {{pairing.name}} </h2>
-    <h2 class="card-text">{{ pairing.category }} </h2>
-    <h4 class="card-text">{{ pairing.sub_category}}</h4>
-    <h4 class="card-text">{{ pairing.perfect_pairing}}</h4>
+    <h4 class="card-title">Pairing ID {{pairing.id}} </h4>
+    <h4 class="card-text"> Wine Style {{ pairing.style}}</h4>
+    <h4 class="card-title">Ingredient {{pairing.name}} </h4>
+    <h4 class="card-text"> Category {{ pairing.category }} </h4>
+    <h4 class="card-text"> Sub Cat {{ pairing.sub_category}}</h4>
+    <h4 class="card-text">Perfect Pairing? {{ pairing.perfect_pairing}}</h4>
     <!-- <ul class="list-group list-group-flush pb-3">
      <li class="list-group-item">{{ entry.region }}, {{ entry.country }}</li>
      <li class="list-group-item">{{ entry.look }}</li>
