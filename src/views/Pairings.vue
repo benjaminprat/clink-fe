@@ -1,11 +1,13 @@
 <template >
-<div class="card" >
+<div class="pairings" >
   <h1>{{message}}</h1>
   <div v-for="pairing in pairings" v-bind:key="pairing.id">
 <p>Pairing Id: {{pairing.id}}</p>
 
-<p>Ingredient Id: {{pairing.ingredient_id}}</p>
-<p>Wine Style: {{pairing.classification_id}}</p>
+<p>Ingredient name: {{pairing.ingredient}}</p>
+<p>Ingredient Category: {{pairing.category}}</p>
+<p>Ingredient Sub Category: {{pairing.sub_category}}</p>
+<p>Wine Style: {{pairing.wine_style}}</p>
 <p>Is perfect pairing? {{pairing.perfect_pairing}}</p>
   </div>
 
@@ -15,15 +17,17 @@
 </template>
 <style>
 
-.card {
+.pairings {
   background-color:grey;
-  height: 80vh;
+  height: 100%;
 }
 </style>
 
 <script>
+import Vue2Filters from "vue2-filters";
 import axios from 'axios';
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function () {
     return {
       message: "Pair Your Shit",
