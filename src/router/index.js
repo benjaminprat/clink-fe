@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import WinesIndex from "../views/WinesIndex.vue";
 import WinesCreate from "../views/WinesCreate.vue";
+import Pairings from "../views/Pairings.vue"
 import Logout from "../views/Logout.vue";
 import Login from "../views/Login.vue";
 import Card from "../views/Card.vue";
@@ -10,11 +11,36 @@ import Signup from "../views/Signup.vue";
 import Form from "../views/Form.vue"
 import WhiteGrapesIndex from "../views/WhiteGrapesIndex.vue"
 import WhiteGrapeCard from "../views/WhiteGrapeCard.vue"
+import Test from "../views/Test.vue"
+import PairingsCard from "../views/PairingsCard.vue"
+import SearchPairings from "../views/SearchPairings.vue"
 
 
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path: "/test",
+    name: 'Test',
+    component: Test,
+  },
+  {
+    path: "/search",
+    name: 'SearchPairings',
+    component: SearchPairings,
+  },
+  {
+    path: "/pairings",
+    name: 'Pairings',
+    component: Pairings,
+  },
+  {
+    path: "/pairings/:id",
+    name: 'PairingsCard',
+    component: PairingsCard,
+  },
+ 
+ 
   {
     path: "/grapes/:id",
     name: "WhiteGrapeCard",
@@ -26,6 +52,7 @@ const routes = [
     name: "WhiteGrapesIndex",
     component: WhiteGrapesIndex,
   },
+  
   
   {
     path: "/form",
