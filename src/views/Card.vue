@@ -1,42 +1,55 @@
 <template>
-  <div class="card">
-    <div class="content">
-    <!-- <h3>{{ entry.wine.producer_wine }}</h3> -->
-    <h1>{{ entry.producer_wine }}</h1>
-    <h2>{{ entry.vintage }}</h2>
-    <h2>{{ entry.grape }}</h2>
-    <h2>{{ entry.region }}</h2>
-    <h2>{{ entry.country }}</h2>
-    <p>{{ entry.opinion }}</p>
-    <p>{{ entry.look }}</p>
-    <p>{{ entry.smell }}</p>
-    <p>{{ entry.taste }}</p>
-    <p>{{ entry.date_tasted }}</p>
-    <p>{{ entry.purchase_point }}</p>
-    <!-- <h1>{{ entry.grape }}</h1>
-    <h3>{{ entry.wine.region }}</h3>
-    <h3>{{ entry.wine.country }}</h3>
-    <h3>{{ entry.wine.vintage }}</h3> -->
-    <!-- <p>{{ entry.opinion }}</p>
-    <p>{{ entry.look }}</p>
-    <p>{{ entry.smell }}</p>
-    <p>{{ entry.taste }}</p>
-    <p>{{ entry.date_tasted }}</p>
-    <p>{{ entry.purchase_point }}</p> -->
+<div class="container">
+    <div class="row">
+       <div class="col-sm-6 col-lg-4">
+          <div class="card">
+            <div class="content card-body">
+    <h2 class="card-title"> {{ entry.vintage }} </h2>
+    <h2 class="card-text">{{ entry.producer_wine }} {{ entry.grape }}</h2>
+    <h4 class="card-text">{{ entry.opinion }}Stars</h4>
+    <h4 class="card-text">{{ entry.date_tasted }}</h4>
+    <ul class="list-group list-group-flush pb-3">
+     <li class="list-group-item">{{ entry.region }}, {{ entry.country }}</li>
+     <li class="list-group-item">{{ entry.smell }}</li>
+     <li class="list-group-item">{{ entry.taste }}</li>
+     <li class="list-group-item"> Store: {{ entry.purchase_point}}</li>
+   </ul>
     </div>
   </div>
+  </div>
+</div>
+</div>
 </template>
 
 <style>
 
-* {
+.card {
+  background-color: #fffffe;
+}
+
+.card-title {
+  color: #e53170;
+}
+
+.card-text, .list-group-item {
+  color: #2e2f3e;
+}
+
+
+
+
+/* .text-primary {
+  color: #ff8906 !important;
+} */
+
+/* * {
   margin:0;
   padding: 0;
   box-sizing: border-box;
 }
 
 template {
-  background: #11101A; 
+  background:grey; 
   display: flex;
   justify-content:center;
   align-items: center;
@@ -55,7 +68,7 @@ template {
  flex-direction: column;
  justify-content: center;
  width:300px;
- height:400px;
+ height:500px;
  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.9);
  border-radius: 5px;
  border: 5px, solid, white;
@@ -69,14 +82,10 @@ template {
   justify-content:center;
   padding-left:15px;
   padding-right:15px;
-}
+  color:black;
+} */
 
-h1,h2 {
-  color: black;
-}
-p {
-  color: black;
-}
+
 </style>
 
 <script>
@@ -92,6 +101,7 @@ export default {
     axios.get("/api/entries/" + this.$route.params.id).then((response) => {
       console.log("show entry", response);
       this.entry = response.data;
+      console.log(this.entry)
     });
   },
   methods: {},
