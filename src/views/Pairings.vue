@@ -8,9 +8,10 @@
 </select>
 <!-- <input type="text" v-model="style"> -->
 <p>Search By Ingredient: <input type="text" class="form-control" v-model="searchTerm" placeholder="Filter By Ingredient"></p>
+<p>Search By Wine-Style: <input type="text" class="form-control" v-model="searchWine" placeholder="Filter By Wine Style"></p>
   <br>
   <div class="row">
-  <div class="col-sm-4" v-bind:key="pairing.id" v-for="pairing in filterBy(pairings, searchTerm, 'ingredient')">
+  <div class="col-sm-4" v-bind:key="pairing.id" v-for="pairing in filterBy(filterBy(pairings, searchTerm), searchWine)">
     <div class="card">
        <div class="card-body">
 <p>Pairing Id: {{pairing.id}}</p>
@@ -49,7 +50,8 @@ export default {
       message: "Pair Your Shit",
       pairings: [],
       searchTerm: "",
-      style: ""
+      style: "",
+      searchWine: ""
      
       }
     }, 
