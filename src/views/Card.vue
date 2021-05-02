@@ -10,6 +10,7 @@
     <h4 class="card-text">{{ entry.date_tasted }}</h4>
     <ul class="list-group list-group-flush pb-3">
      <li class="list-group-item">{{ entry.region }}, {{ entry.country }}</li>
+     <li class="list-group-item">{{ entry.look }}</li>
      <li class="list-group-item">{{ entry.smell }}</li>
      <li class="list-group-item">{{ entry.taste }}</li>
      <li class="list-group-item"> Store: {{ entry.purchase_point}}</li>
@@ -25,6 +26,7 @@
 
 .card {
   background-color: #fffffe;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .card-title {

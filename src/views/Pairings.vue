@@ -1,6 +1,13 @@
 <template >
 <div class="pairings-index" >
-  <p>Search: <input type="text" v-model="searchTerm"></p>
+  
+  
+<select v-model="style">
+<option value="Light-White"> Light White</option>
+<option value="Full-Red"> Full Red</option>
+</select>
+<!-- <input type="text" v-model="style"> -->
+<p>Search By Ingredient: <input type="text" class="form-control" v-model="searchTerm" placeholder="Filter By Ingredient"></p>
   <br>
   <div class="row">
   <div class="col-sm-4" v-bind:key="pairing.id" v-for="pairing in filterBy(pairings, searchTerm, 'ingredient')">
@@ -37,14 +44,23 @@ export default {
   mixins: [Vue2Filters.mixin],
   data: function () {
     return {
+      sortKey: "",
+      reverse: false,
       message: "Pair Your Shit",
       pairings: [],
-      searchTerm: ""
+      searchTerm: "",
+      style: ""
+     
       }
     }, 
   created: function() {
     this.pairingsIndex()
   },
+  // computed: {
+  //   filterPairings: function() {
+  //     return.this.filter
+  //   }
+  // }
    
   methods: {
     pairingsIndex: function() {
@@ -53,7 +69,20 @@ export default {
         this.pairings = response.data;
         console.log(response.data)
       })
+    },
+    filterPairingsByIngredient: function(pairings) {
+      return pairings.filter(pairing => !pairing.ingredient.indexOf(this.ingredient))
+    },
+
+    filterPairingsByWineStyle: function(pairings) {
+      return pairings.filter(pairing => !pairing.style.indexOf(this.style))
     }
+    // filters: {
+    //   name: function(pairings) {
+
+    //   }
+    // }
+
   }
 }
 </script>
