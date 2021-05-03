@@ -1,6 +1,6 @@
 <template>
   <div class="wines-index">
-  <NavBarTwo/>
+  <NavBarTwo />
     <h1>{{ message }}</h1>
     <h1>
       <div v-for="wine in wines" v-bind:key="wine.id">
@@ -43,7 +43,7 @@ export default {
   methods: {
     winesIndex: function () {
       console.log("all wines");
-      axios.get("api/wines").then((response) => {
+      axios.get('api/wines').then((response) => {
         this.wines = response.data;
         console.log(response.data);
       });
