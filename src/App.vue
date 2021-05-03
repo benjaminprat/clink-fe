@@ -14,7 +14,7 @@
  #app {
    font-family: 'Roboto', sans-serif;
    height: 100vh;
-   background: grey;
+   background:#fffffe;
    color: #2c3e50;
  }
 
