@@ -4,6 +4,8 @@
     <a href="/about" >About</a>
     <a href="/wines/new" >Add A New Wine</a>
     <a href="/card">New Entry</a>
+    <a href="/test">Test Me</a>
+    <a href="/pairings">Pairings</a>
     <a href="/logout" class="nav-item nav-link">Logout</a>
 </div>
 </template>

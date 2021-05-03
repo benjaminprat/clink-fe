@@ -14,6 +14,7 @@ import WhiteGrapeCard from "../views/WhiteGrapeCard.vue"
 import Test from "../views/Test.vue"
 import PairingsCard from "../views/PairingsCard.vue"
 import SearchPairings from "../views/SearchPairings.vue"
+// import Vue2Filters from 'vue2-filters'
 
 
 Vue.use(VueRouter);

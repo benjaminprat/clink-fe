@@ -4,20 +4,33 @@
   </div>
 </template>
 
-<style>
+ <style>
+ /* @import'~bootstrap/dist/css/bootstrap.css'; */
 
-
-#app {
-  font-family: 'Roboto', sans-serif;
-  height: 100vh;
-  background: #11101A;
-  color: #2c3e50;
+ .text-primary {
+  color: #ff8906 !important;
 }
 
+ #app {
+   font-family: 'Roboto', sans-serif;
+   height: 100vh;
+   background: grey;
+   color: #2c3e50;
+ }
 
 
 
-</style>
+
+ </style>
+
+
+
+
+
+
+
+
+
 <script>
   export default {
     methods: {
